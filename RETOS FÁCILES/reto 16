@@ -1,0 +1,13 @@
+'''
+Reto 16
+Crea un script que sea capaz de restar dos fechas y muestra el resultado por consola
+'''
+
+from datetime import date
+d1 = date(2013,1,1)
+d2 = date(2013,9,13)
+def diffDates(d1,d2):
+  return abs(d2-d1).days
+print(diffDates)
+
+print('la diferencia entre {} y {} es de {} días'.format(d2, d1, diffDates(d2,d1)))

@@ -1,0 +1,8 @@
+'''
+Escribe una función que calcule el área de un triángulo, recibiendo la altura y la base como parámetros y otra función que calcule el área de un círculo recibiendo el radio del mismo
+'''
+Formula = 0.5
+Base = int(input(f'Introduzca la base del triángulo:  '))
+Altura = int(input(f'Introduzca la altura del triángulo:  '))
+Area = Base * Altura * Formula
+print(Area)

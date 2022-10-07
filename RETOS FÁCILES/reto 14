@@ -1,0 +1,12 @@
+'''
+Reto 14
+Escribe una función que use la función del área del círculo para devolver el volumen de un cilindro, obteniendo por parámetro la longitud del mismo.
+'''
+Formula = 0.5
+Radio = int(input(f'Introduzca el radio del círculo:  '))
+Altura = int(input(f'Introduzca la altura del cilindro:  '))
+from math import pi
+AreaCirculo = Radio * Radio * Formula* pi
+print(f'Area Círculo: {AreaCirculo}')
+AreaCilindro = (AreaCirculo * 2) + (Radio * Altura) 
+print(f'Area Cilindro: {AreaCilindro}')

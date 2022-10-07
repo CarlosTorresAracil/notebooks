@@ -1,0 +1,12 @@
+'''
+Reto 8
+Escribe un programa que pueda decirte si un número (número entero) es primo o no
+'''
+numero = int(input(f'Introduzca un numero:  '))
+if numero %1 != 0:
+  print("No es un número entero")
+  numero = int(input(f'Introduzca su numero entero:  '))
+elif numero %2 == 0:
+  print("su numero es primo")
+else:
+  print("su numero no es primo")

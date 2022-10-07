@@ -1,0 +1,20 @@
+'''
+Reto 11
+Escribe un programa que pida al usuario los siguientes datos por consola:
+Título de la película
+Director
+Año
+País
+E introduzca esos valores en una variable GLOBAL llamada "pelicula"
+'''
+
+Titulodelapelicula = str(input(f'Introduzca el título:  ')) 
+Director = str(input(f'Introduzca el director:  '))
+Año = int(input(f'Introduzca el año:  '))
+Pais = str(input(f'Introduzca sel país:  '))
+
+my_dic = {'Título de la Película':Titulodelapelicula, 'Director':Director, 'Año':Año, 'País':Pais}
+print(my_dic['Título de la Película'])
+print(my_dic['Año'])
+
+

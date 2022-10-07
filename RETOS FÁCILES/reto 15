@@ -1,0 +1,13 @@
+'''
+Reto 15
+Escribe una función que reciba una muestra de números en una lista y devuelva otra lista con sus cuadrados.
+'''
+
+def square(*a):
+    lista = []
+    for i in a:
+        lista.append(i**2)
+    return lista
+
+print(square(1, 2, 3, 4, 5))
+

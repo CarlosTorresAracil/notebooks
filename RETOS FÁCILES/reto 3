@@ -1,0 +1,23 @@
+  
+
+''' 
+
+Reto 3 
+
+Escribe un programa que sea capaz de mostrar los números del 1 al 100 en orden inverso. 
+
+''' 
+
+number = 100 
+
+while number > 0: 
+
+  print(number) 
+
+  number = number - 1 
+
+  
+
+x = reversed(range(0,101)) 
+
+print(x) 

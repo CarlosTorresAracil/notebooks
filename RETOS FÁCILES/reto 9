@@ -1,0 +1,13 @@
+'''
+Reto 9
+Escribe un programa que pueda decirte si un año (número entero) es bisiesto o no
+'''
+def leap_year(year: int): 
+
+    return (year % 400 == 0) or (year % 100 != 0 and year % 4 == 0) 
+
+while not leap_year(int(input('introduce año: '))): 
+
+    print('ese año no es bisiesto') 
+
+print('has acertado es bisiesto') 
