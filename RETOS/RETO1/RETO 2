@@ -3,40 +3,39 @@ Reto 2
 El programa debe preguntar el artículo y su precio y añadirlo a una variable (diccionario u objeto literal), hasta que el usuario decida terminar ("Introducir otro elemento al carrito (Si / No)".
 Una vez el usuario decida no introducir más elementos al carrito, debe mostrar por pantalla la lista de la compra y el coste total.
 '''
-from pprint import pprint
 from datetime import date 
-
 
 ARROZ = 15
 PAN = 5
 LECHE = 20
 cash = 0
-
+seguir = 15
 input ("Bienvendio usuario, pulsa la tecla enter para acceder a nuestro catalogo  ")
-
 print ("Hola! esta es la lista de artículos disponibles :\n\n")
-
 print ('1º ARROZ  \n\n2º PAN \n\n3º LECHE') 
 numero = int (input("Selecciona del 1 al 3 que desea comprar  "))
-seguir = 2
+Lista = []
 while seguir != 0:
+  numero = int (input("Selecciona del 1 al 3 que desea comprar  "))
   if numero == 1 :
-    
-    seleccion1= 'ARROZ'
+    eleccion= 'ARROZ'
     cash = cash + 15
+    Lista.append(eleccion)
+    seguir = int(input(f'Si desea seguir comprando escriba un 0 si no escriba otro número: '))
   elif numero == 2 :
-    
-    seleccion2= 'PAN'
     cash = cash + 5
+    seleccion2= 'PAN'
+    Lista.append(eleccion)
+    seguir = int(input(f'Si desea seguir comprando escriba un 0 si no escriba otro número: '))
   elif numero == 3 :
-    
-    seleccion3= 'LECHE'
     cash = cash + 20
-  seguir = int(input(f'Si desea seguir comprando escriba un 0 si no escriba otro número: '))
+    seleccion2= 'LECHE'
+    Lista.append(eleccion)
+    seguir = int(input(f'Si desea seguir comprando escriba un 0 si no escriba otro número: '))
 
 
-if seguir == 0:
-    print (f"\n\n Muchas gracias por tu compra\n\n") 
-    hoy = date.today()
-    print (f"Fecha de compra {hoy} ")
-    print(f'su compra asciende a un total de {cash}')
+print (f"\n\n Muchas gracias por tu compra\n\n") 
+hoy = date.today()
+print([Lista])
+print (f"Fecha de compra {hoy} ")
+print(f'su compra asciende a un total de {cash}')

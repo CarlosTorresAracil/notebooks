@@ -1,0 +1,43 @@
+'''
+Reto 4
+Escribe un programa que almacene lenguajes de programación en una lista.
+El programa deberá preguntar por consola si el usuario conoce o no el lenguaje. El usuario deberá responder "sí" o "no" y cualquier otra respuesta no será tenida en cuenta, preguntando de nuevo la misma pregunta:
+¿Conoces el lenguaje de programación "lenguaje"? (si / no) donde "lenguaje" es cada uno de los lenguajes de la lista.
+Finalmente, el programa debe mostrar por pantalla la lista de los lenguajes y si el usuario los conoce o no. Algo así:
+JavaScript: no
+TypeScript: sí
+Python: sí
+Dart: no
+'''
+Lenguajes = {
+	"Python": 1,
+	"Java": 1,
+	"C++": 1,
+}
+x = 0
+count = 0
+print("A continuación a apareceran una lista de lenguajes de programación uno a uno y usted debe indicar si lo conoce o no")
+respuesta = input(f'¿Conoces el lenguaje de programación Python? : ')
+while x != 3 :
+  if count == 1 :
+    respuesta = input(f'¿Conoces el lenguaje de programación Python? : ')
+    Lenguajes["Python"] = respuesta
+    count = count + 1
+    x = x +1 
+    
+  elif count == 2 :
+    respuesta = input(f'¿Conoces el lenguaje de programación Java? : ')
+    Lenguajes["Java"] = respuesta
+    count = count + 1
+    x = x +1 
+    
+  elif count == 3 :
+    respuesta = input(f'¿Conoces el lenguaje de programación C++? : ')
+    Lenguajes["C++"] = respuesta
+    count = count + 1
+    x = x +1 
+   
+    
+print(Lenguajes)
+
+
