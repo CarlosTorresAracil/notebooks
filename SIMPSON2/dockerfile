@@ -1,0 +1,12 @@
+FROM python:3.9.15-slim-buster
+RUN mkdir SIMPSON2
+RUN mkdir SIMPSON2/File
+RUN mkdir SIMPSON2/Homer
+RUN mkdir SIMPSON2/Lisa
+RUN touch SIMPSON2/File/file.csv
+RUN touch SIMPSON2/Homer/homer.csv
+RUN touch SIMPSON2/Lisa/lisa.csv
+
+COPY simpson.py ./SIMPSON2
+
+CMD ["python", "SIMPSON2/simpson.py"]

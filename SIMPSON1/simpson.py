@@ -10,19 +10,19 @@ while True :
     
   if personaje1 != 'Homer Simpson' and personaje1 != 'Lisa Simpson' :
     my_dict = {"quote": quote1,"personaje": personaje1}
-    with open('file.csv', 'a') as csvfile: 
+    with open('File/file.csv', 'a') as csvfile: 
       w = csv.DictWriter(csvfile, my_dict.keys())
       w.writerow(my_dict)
 
   elif personaje1 == 'Homer Simpson':
     my_dict = {"quote": quote1,"personaje": personaje1}
-    with open('homer.csv', 'a') as csvfile: 
+    with open('Homer/homer.csv', 'a') as csvfile: 
       w = csv.DictWriter(csvfile, my_dict.keys())
       w.writerow(my_dict)
 
   elif personaje1 == 'Lisa Simpson':
     my_dict = {"quote": quote1,"personaje": personaje1}
-    with open('lisa.csv', 'a') as csvfile: 
+    with open('Lisa/lisa.csv', 'a') as csvfile: 
       w = csv.DictWriter(csvfile, my_dict.keys())
       w.writerow(my_dict)
     
