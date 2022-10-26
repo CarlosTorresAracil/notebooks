@@ -1,12 +1,18 @@
 FROM python:3.9.15-slim-buster
-RUN mkdir SIMPSON2
-RUN mkdir SIMPSON2/File
-RUN mkdir SIMPSON2/Homer
-RUN mkdir SIMPSON2/Lisa
-RUN touch SIMPSON2/File/file.csv
-RUN touch SIMPSON2/Homer/homer.csv
-RUN touch SIMPSON2/Lisa/lisa.csv
 
-COPY simpson.py ./SIMPSON2
+RUN mkdir /app
 
-CMD ["python", "SIMPSON2/simpson.py"]
+WORKDIR /app
+
+RUN mkdir NumPalabras
+
+RUN touch NumPalabra/numPalabra.csv
+
+
+COPY . /app
+
+RUN pip install --upgrade pip
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "lisa2.py"]
