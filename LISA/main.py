@@ -2,7 +2,7 @@ import requests
 import time
 import string
 import csv
-import os.path
+import os
 
 # cuenta las palabras y las mete en un diccionario 
 # sacado de goole 
@@ -37,7 +37,7 @@ while True :
   datos = {"Personaje": datosJson[0]["character"], "Quote": datosJson[0]["quote"]}
   imagen = requests.get(datosJson[0]["image"]).content
 
-# crea los directotios e introduce la imagen
+# crea la ruta oara crear directorios e introduce la imagen
   File = datos["Personaje"].translate(simbolos).replace(" ", "_") + ".png"
   Directorio = "CARPETA/"+datos["Personaje"].translate(simbolos).replace(" ", "_")+"/"
   Ruta = os.path.join(Directorio, File)
@@ -46,7 +46,7 @@ while True :
   with open (File, "wb") as f:
     f.write(imagen)
 
-# creamos archivos csv por personaje
+# creamos la ruta de archivos csv por personaje 
   File2 = datos["Personaje"] +".csv"
   Ruta2 = os.path.join(Directorio, File2)
   with open(Ruta2, 'a') as g: 
