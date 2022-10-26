@@ -1,0 +1,15 @@
+FROM python
+
+# copia los achivos que pesca de la web y los mete en la carpeta creada
+
+COPY ./main.py /CARPETA/
+
+COPY ./requirements.txt /CARPETA/
+
+# WORKDIR oermite que CARPETA SEA DONDE SE TRABAJA
+
+WORKDIR /CARPETA/
+
+
+RUN pip install -r requirements.txt
+CMD ["python", "main.py"]

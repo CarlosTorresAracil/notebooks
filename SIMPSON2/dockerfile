@@ -1,18 +1,12 @@
-FROM python:3.9.15-slim-buster
 
-RUN mkdir /app
+FROM python
 
-WORKDIR /app
+COPY ./lisa2.py /app/
+COPY ./requirements.txt /app/
 
-RUN mkdir NumPalabras
-
-RUN touch NumPalabra/numPalabra.csv
-
-
-COPY . /app
-
-RUN pip install --upgrade pip
-
+WORKDIR /app/
 RUN pip install -r requirements.txt
 
-CMD ["python", "lisa2.py"]
+
+ENTRYPOINT ["python3", "lisa2.py"]
+

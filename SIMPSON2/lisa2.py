@@ -47,7 +47,7 @@ while True :
 # revisamos si eixte ya se ha creado antes o no
   if personaje1 in personajes:
 #opción 1 - como esta dentro ya le mandamos a la carpeta del personaje existente
-        ruta = '/app'
+        ruta = '_'
         carpeta_2 = personaje1
         path2 = os.path.join(ruta,carpeta_2)
         personaje2 = personaje1 + '.csv'
@@ -61,7 +61,7 @@ while True :
 #opcion 2 - como el personaje no esta creado se crea
         personajes.append(personaje1)
         carpeta_1 = personaje1
-        parent_dir = '/app'
+        parent_dir = '_'
         path = os.path.join(parent_dir,carpeta_1)
         os.mkdir(path)
 #introduco mi quote dentro del personaje y hecho esto con la función shutil la meto en mi archivo
@@ -85,4 +85,7 @@ while True :
     
 # lanza a al api y pesca cada 30s
   time.sleep(30)
+
+
+
 
