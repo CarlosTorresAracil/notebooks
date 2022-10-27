@@ -1,11 +1,13 @@
+# Paso 1: se importan los distintos paquetes que utlizará el código.
+
 import requests 
 import time
 import string
 import csv
 import os
 
-# cuenta las palabras y las mete en un diccionario 
-# sacado de goole 
+# Paso 2: Código que cuenta las palabras y es capaz de actualizar su conteo. 
+# Cógio copiado al 100% de google 
 def word_count(str,cuentaPalabras):
     counts = cuentaPalabras
     words = str.split()
@@ -17,27 +19,29 @@ def word_count(str,cuentaPalabras):
             counts[word] = 1
 
     return counts
+
+# Creamos un diccionario donde se almacenarán
 conteoPalabras = dict()
 
 
 
-# indica que el directorio donde se trabajará es CARPETA
+# Paso 3: Creación de la carpeta donde se alamacenarán las subcarpetas de cada personaje que almacemará los csv con las frases de cada perosnaje. 
 if not os.path.isdir("CARPETA/"):
     os.mkdir("CARPETA/")
 
-#eliminamos los simbolos
+# Paso 4: Elimina los símbolos de las frases para permitir el conteo.
 simbolos = str.maketrans("","", string.punctuation)
 del simbolos[ord("'")]
    
-    
+# Paso 5: Lanzamientos de peticiones a la API de los simpsons. Obteniendo Quote, Character y Image
 while True :  
-# definimos lo que pesca de la web de simpsons
+# Asignamos temporalmente a variables las conusltas que hace de la web
   respuesta = requests.get("https://thesimpsonsquoteapi.glitch.me/quotes")
   datosJson = respuesta.json()
   datos = {"Personaje": datosJson[0]["character"], "Quote": datosJson[0]["quote"]}
   imagen = requests.get(datosJson[0]["image"]).content
 
-# crea la ruta oara crear directorios e introduce la imagen
+# Crea directorios dentro de la carpeta principal. Crea la ruta para crear directorios e introduce la imagen. 
   File = datos["Personaje"].translate(simbolos).replace(" ", "_") + ".png"
   Directorio = "CARPETA/"+datos["Personaje"].translate(simbolos).replace(" ", "_")+"/"
   Ruta = os.path.join(Directorio, File)
@@ -45,8 +49,10 @@ while True :
     os.mkdir(Directorio)
   with open (File, "wb") as f:
     f.write(imagen)
+#No me ha funcionado y no he sabido  conseguir que lo introduzca en las carpetas. ****
 
-# creamos la ruta de archivos csv por personaje 
+
+# Crea el csv que y establece la ruta para meter los datos del api por personaje 
   File2 = datos["Personaje"] +".csv"
   Ruta2 = os.path.join(Directorio, File2)
   with open(Ruta2, 'a') as g: 
@@ -54,7 +60,7 @@ while True :
       w.writerow(datos)
 
 
-## tira del def y nutre el diccionario 
+## Utiliza la función definida en el def y nutre el diccionario que luego lo introduce en la carpeta de cada personaje 
   word_count(datos["Quote"], conteoPalabras)
   with open("CARPETA/conteo.csv", "w") as csvfile:
         Data = ["Quote", "Conteo"]
@@ -63,6 +69,6 @@ while True :
         for Data3 in conteoPalabras:
             Data2.writerow({"Quote": Data3, "Conteo": conteoPalabras[Data3]})
 
-
-  time.sleep(5)
+#Establece un timer que ejecuta el while cada x tiempo. 
+  time.sleep(30)
 

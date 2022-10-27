@@ -6,7 +6,7 @@ COPY ./main.py /CARPETA/
 
 COPY ./requirements.txt /CARPETA/
 
-# WORKDIR oermite que CARPETA SEA DONDE SE TRABAJA
+# WORKDIR permite que CARPETA SEA DONDE SE TRABAJA
 
 WORKDIR /CARPETA/
 
